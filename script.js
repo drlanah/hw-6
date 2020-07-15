@@ -32,9 +32,9 @@ $(".searchBtn").click(function (event) {
     console.log(iconCode);
     $("#icon-image").attr("src", weatherIcon);
 
-    $("#temperature").text(response.main.temp);
-    $("#humidity").text(response.main.humidity);
-    $("#wind-speed").text(response.wind.speed);
+    $("#temperature").text(response.main.temp + "\xB0F");
+    $("#humidity").text(response.main.humidity + "%");
+    $("#wind-speed").text(response.wind.speed + " MPH");
 
     //UV Index
     var latitude = response.coord.lat;
@@ -56,30 +56,24 @@ $(".searchBtn").click(function (event) {
       $("#uv-index").text(uvIndex);
       if (uvIndex < 2) {
         $("#uv-index").attr("class", "low");
-        console.log("You're safe!");
       }
       if (uvIndex >= 2 && uvIndex <= 5) {
         $("#uv-index").attr("class", "moderate");
-        console.log("Getting risky");
       }
       if (uvIndex > 5 && uvIndex <= 7) {
         $("#uv-index").attr("class", "high");
-        console.log("Uh oh!");
       }
       if (uvIndex > 7 && uvIndex <= 10) {
         $("#uv-index").attr("class", "very-high");
-        console.log("You better stay inside!");
       }
       if (uvIndex > 10) {
         $("#uv-index").attr("class", "extreme");
-        console.log("You will ignite on fire");
       }
       console.log("UV Index:", uvIndex);
     });
   });
 
   //   FIVE DAY FORECAST
-  // five Day Forecast
   var forecastURL =
     "http://api.openweathermap.org/data/2.5/forecast?q=" +
     citySearch +
@@ -90,12 +84,11 @@ $(".searchBtn").click(function (event) {
     method: "GET",
   }).then(function (response) {
     console.log(response);
-    // day one
+
     var firstDay = moment(response.list[3].dt_txt).format("dddd MMMM Do YYYY");
     $("#one").text(firstDay);
-    $("#temperature-one").text(parseInt(response.list[3].main.temp));
-    $("#humidity-one").text(response.list[3].main.humidity);
-    $("#pressure-one").text(response.list[3].main.pressure);
+    $("#temperature-one").text(parseInt(response.list[3].main.temp) + "\xB0F");
+    $("#humidity-one").text(response.list[3].main.humidity + "%");
     var iconCode = response.list[3].weather[0].icon;
     var weatherIcon = "http://openweathermap.org/img/w/" + iconCode + ".png";
     $("#icon-image1").attr("src", weatherIcon);
@@ -104,18 +97,18 @@ $(".searchBtn").click(function (event) {
       "dddd MMMM Do YYYY"
     );
     $("#two").text(secondDay);
-    $("#temperature-two").text(parseInt(response.list[11].main.temp));
-    $("#humidity-two").text(response.list[11].main.humidity);
-    $("#pressure-two").text(response.list[11].main.pressure);
+    $("#temperature-two").text(parseInt(response.list[11].main.temp) + "\xB0F");
+    $("#humidity-two").text(response.list[11].main.humidity + "%");
     var iconCode = response.list[11].weather[0].icon;
     var weatherIcon = "http://openweathermap.org/img/w/" + iconCode + ".png";
     $("#icon-image2").attr("src", weatherIcon);
 
     var thirdDay = moment(response.list[19].dt_txt).format("dddd MMMM Do YYYY");
     $("#three").text(thirdDay);
-    $("#temperature-three").text(parseInt(response.list[19].main.temp));
-    $("#humidity-three").text(response.list[19].main.humidity);
-    $("#pressure-three").text(response.list[19].main.pressure);
+    $("#temperature-three").text(
+      parseInt(response.list[19].main.temp) + "\xB0F"
+    );
+    $("#humidity-three").text(response.list[19].main.humidity + "%");
     var iconCode = response.list[19].weather[0].icon;
     var weatherIcon = "http://openweathermap.org/img/w/" + iconCode + ".png";
     $("#icon-image3").attr("src", weatherIcon);
@@ -124,18 +117,20 @@ $(".searchBtn").click(function (event) {
       "dddd MMMM Do YYYY"
     );
     $("#four").text(fourthDay);
-    $("#temperature-four").text(parseInt(response.list[27].main.temp));
-    $("#humidity-four").text(response.list[27].main.humidity);
-    $("#pressure-four").text(response.list[27].main.pressure);
+    $("#temperature-four").text(
+      parseInt(response.list[27].main.temp) + "\xB0F"
+    );
+    $("#humidity-four").text(response.list[27].main.humidity + "%");
     var iconCode = response.list[27].weather[0].icon;
     var weatherIcon = "http://openweathermap.org/img/w/" + iconCode + ".png";
     $("#icon-image4").attr("src", weatherIcon);
 
     var fifthDay = moment(response.list[35].dt_txt).format("dddd MMMM Do YYYY");
     $("#five").text(fifthDay);
-    $("#temperature-five").text(parseInt(response.list[35].main.temp));
-    $("#humidity-five").text(response.list[35].main.humidity);
-    $("#pressure-five").text(response.list[35].main.pressure);
+    $("#temperature-five").text(
+      parseInt(response.list[35].main.temp) + "\xB0F"
+    );
+    $("#humidity-five").text(response.list[35].main.humidity + "%");
     var iconCode = response.list[35].weather[0].icon;
     var weatherIcon = "http://openweathermap.org/img/w/" + iconCode + ".png";
     $("#icon-image5").attr("src", weatherIcon);
