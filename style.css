@@ -1,0 +1,19 @@
+.low {
+  background-color: lightyellow;
+}
+
+.moderate {
+  background-color: yellow;
+}
+
+.high {
+  background-color: orange;
+}
+
+.very-high {
+  background-color: red;
+}
+
+.extreme {
+  background-color: darkred;
+}
