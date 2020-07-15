@@ -12,9 +12,9 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body class="body">
     <!-- NAVBAR -->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar">
       <a class="navbar-brand">WEATHER</a>
       <form class="form-inline">
         <input
@@ -24,10 +24,7 @@
           placeholder="City"
           aria-label="Search"
         />
-        <button
-          class="searchBtn btn btn-outline-success my-2 my-sm-0"
-          type="submit"
-        >
+        <button type="button" class="searchBtn btn btn-outline-light">
           Search
         </button>
       </form>
@@ -38,49 +35,67 @@
         <div class="card-body">
           <h5 class="card-title city-name"></h5>
           <h6 class="card-subtitle mb-2 date"></h6>
-          <p class="card-text">Temperature:<span id="temperature"></span></p>
-          <p class="card-text">Humdity:<span id="humidity"></span></p>
-          <p class="card-text">Wind Speed:<span id="wind-speed"></span></p>
-          <p class="card-text">UV Index:<span id="uv-index"></span></p>
+          <p class="card-text">Temperature: <span id="temperature"></span></p>
+          <p class="card-text">Humdity: <span id="humidity"></span></p>
+          <p class="card-text">Wind Speed: <span id="wind-speed"></span></p>
+          <p class="card-text">UV Index: <span id="uv-index"></span></p>
           <img src="" id="icon-image" alt="Icon Image" />
         </div>
       </div>
     </div>
+
     <!-- 5 DAY FORECAST -->
     <div class="row">
       <div class="card border-dark mb-2" style="max-width: 12rem;">
-        <div class="card-header cityNamecard">Monday</div>
+        <div class="card-header cityNamecard" id="one"></div>
         <div class="card-body text-dark">
-          <h5 class="card-title">text</h5>
-          <p class="card-text">text</p>
+          <p class="card-text">
+            Temperature: <span id="temperature-one"></span>
+          </p>
+          <p class="card-text">Humidity: <span id="humidity-one"></span></p>
+          <p class="card-text">Pressure: <span id="pressure-one"></span></p>
         </div>
       </div>
       <div class="card border-dark mb-2" style="max-width: 12rem;">
-        <div class="card-header cityNamecard">Tuesday</div>
+        <div class="card-header cityNamecard" id="two"></div>
         <div class="card-body text-dark">
-          <h5 class="card-title">text</h5>
-          <p class="card-text">text</p>
+          <p class="card-text">
+            Temperature: <span id="temperature-two"></span>
+          </p>
+          <p class="card-text">Humidity: <span id="humidity-two"></span></p>
+          <p class="card-text">Pressure: <span id="pressure-two"></span></p>
         </div>
       </div>
       <div class="card border-dark mb-2" style="max-width: 12rem;">
-        <div class="card-header cityNamecard">Wednesday</div>
+        <div class="card-header cityNamecard" id="three"></div>
         <div class="card-body text-dark">
-          <h5 class="card-title">text</h5>
-          <p class="card-text">text</p>
+          <p class="card-text">
+            Temperature: <span id="temperature-three"></span>
+          </p>
+          <p class="card-text">Humidity: <span id="humidity-three"></span></p>
+
+          <p class="card-text">Pressure: <span id="pressure-three"></span></p>
         </div>
       </div>
       <div class="card border-dark mb-2" style="max-width: 12rem;">
-        <div class="card-header cityNamecard">Thursday</div>
+        <div class="card-header cityNamecard" id="four"></div>
         <div class="card-body text-dark">
-          <h5 class="card-title">text</h5>
-          <p class="card-text">text</p>
+          <p class="card-text">
+            Temperature: <span id="temperature-four"></span>
+          </p>
+          <p class="card-text">Humidity: <span id="humidity-four"></span></p>
+
+          <p class="card-text">Pressure: <span id="pressure-four"></span></p>
         </div>
       </div>
       <div class="card border-dark mb-2" style="max-width: 12rem;">
-        <div class="card-header cityNamecard">Friday</div>
+        <div class="card-header cityNamecard" id="five"></div>
         <div class="card-body text-dark">
-          <h5 class="card-title">text</h5>
-          <p class="card-text">text</p>
+          <p class="card-text">
+            Temperature: <span id="temperature-five"></span>
+          </p>
+          <p class="card-text">Humidity: <span id="humidity-five"></span></p>
+          <p class="card-text">Pressure: <span id="pressure-five"></span></p>
         </div>
       </div>
     </div>

@@ -1,3 +1,7 @@
+.body {
+  background-color: whitesmoke;
+}
+
 .low {
   background-color: lightyellow;
 }
@@ -16,4 +20,21 @@
 
 .extreme {
   background-color: darkred;
+}
+
+.navbar {
+  color: white;
+  background-color: navy;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.current-weather {
+  margin: 30px auto;
+  width: 100px;
+  border: navy 3px;
+}
+
+.card {
+  margin-left: 10px;
+  margin-right: 10px;
 }

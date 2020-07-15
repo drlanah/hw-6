@@ -19,12 +19,12 @@ $(".searchBtn").click(function (event) {
   }).then(function (response) {
     console.log(response);
 
-    var cityName = response.cityname;
-    $("#city-name").text(cityName);
+    var cityName = response.name;
+    $(".city-name").text(cityName);
 
     var date = moment();
     var dateDisplay = date.format("dddd MMMM Do YYYY");
-    $("#date").text(dateDisplay);
+    $(".date").text(dateDisplay);
 
     // Icon
     var iconCode = response.weather[0].icon;
@@ -76,5 +76,47 @@ $(".searchBtn").click(function (event) {
       }
       console.log("UV Index:", uvIndex);
     });
+  });
+
+  //   FIVE DAY FORECAST
+  // five Day Forecast
+  var forecastURL =
+    "http://api.openweathermap.org/data/2.5/forecast?q=" +
+    citySearch +
+    "&appid=c7629276d88b73d9dee17485c554906b" +
+    "&units=imperial";
+  $.ajax({
+    url: forecastURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log(response);
+    // day one
+    var firstDay = moment(response.list[0].dt_txt).format("dddd MMMM Do YYYY");
+    $("#one").text(firstDay);
+    $("#temperature-one").text(response.list[0].main.temp);
+    $("#humidity-one").text(response.list[0].main.humidity);
+    $("#pressure-one").text(response.list[0].main.pressure);
+    var secondDay = moment(response.list[8].dt_txt).format("dddd MMMM Do YYYY");
+    $("#two").text(secondDay);
+    $("#temperature-two").text(response.list[8].main.temp);
+    $("#humidity-two").text(response.list[8].main.humidity);
+    $("#pressure-two").text(response.list[8].main.pressure);
+    var thirdDay = moment(response.list[16].dt_txt).format("dddd MMMM Do YYYY");
+    $("#three").text(thirdDay);
+    $("#temperature-three").text(response.list[16].main.temp);
+    $("#humidity-three").text(response.list[16].main.humidity);
+    $("#pressure-three").text(response.list[16].main.pressure);
+    var fourthDay = moment(response.list[24].dt_txt).format(
+      "dddd MMMM Do YYYY"
+    );
+    $("#four").text(fourthDay);
+    $("#temperature-four").text(response.list[24].main.temp);
+    $("#humidity-four").text(response.list[24].main.humidity);
+    $("#pressure-four").text(response.list[24].main.pressure);
+    var fifthDay = moment(response.list[32].dt_txt).format("dddd MMMM Do YYYY");
+    $("#five").text(fifthDay);
+    $("#temperature-five").text(response.list[32].main.temp);
+    $("#humidity-five").text(response.list[32].main.humidity);
+    $("#pressure-five").text(response.list[32].main.pressure);
   });
 });
