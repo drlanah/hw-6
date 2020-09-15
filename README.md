@@ -1,8 +1,33 @@
-# WEATHER APP
+# Weather App
 
-## https://drlanah.github.io/hw-6/
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Overview
+### Table of Contents
+
+1. Preview
+2. [Description](#description)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [License](#license)
+6. [Contact](#contact)
+
+### Preview
+
+![weather app](/assets/weather.gif)
+
+### Description
+
+- AS A traveler
+- I WANT to see the weather outlook for multiple cities
+- SO THAT I can plan a trip accordingly
+
+### Installation
+
+- Open through browser.
+
+- [GitHub](https://drlanah.github.io/hw-6/)
+
+### Usage
 
 - User inputs the name of a city into the search bar.
   Data is displayed for that date, with the temperature, humidity, wind speed, UV index, and an icon to correspond with the weather.
@@ -13,13 +38,10 @@
 
 - The data for the weather information was pulled from an API, https://openweathermap.org/api.
 
-## User Story
+### License
 
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
+- MIT
 
-## Preview
+### Contact
 
-The following image demonstrates the application functionality:
-![weather dashboard](weather.png)
+- [Lana](https://github.com/drlanah)
